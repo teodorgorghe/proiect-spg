@@ -7,6 +7,11 @@
 
 #define PI glm::pi<float>()
 
+float generate_random()
+{
+	return static_cast<float>(rand()) / RAND_MAX * 2 - 1;
+}
+
 /**
  * \brief Renderer init and rendering the text into the screen
  */
@@ -191,16 +196,19 @@ void window::on_mouse_event(int button, int state, int x, int y)
  */
 void window::put_coons(float x, float y)
 {
+	const glm::vec3 t1 = glm::vec3(generate_random(), generate_random(), 0.0f);
+	const glm::vec3 t2 = glm::vec3(generate_random(), generate_random(), 0.0f);
+	const glm::vec3 p2 = glm::vec3(generate_random(), generate_random(), 0.0f);
 	renderer_.coons_vector.push_back(std::pair<coons, guidelines>(
-		coons(glm::vec3(x, y, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f), 20),
+		coons(glm::vec3(x, y, 0.0f), p2, t1, t2, 20),
 		{ std::vector<circle> {
 			circle(x, y, 0.03f, 0.01f, glm::vec3(0.1f, 0.1f, 0.8f), glm::vec3(1.0f, 1.0f, 1.0f)),
-			circle(0.0f, 0.0f, 0.03f, 0.01f, glm::vec3(0.1f, 0.1f, 0.8f), glm::vec3(1.0f, 1.0f, 1.0f)),
-			circle(0.0f, 0.0f, 0.03f, 0.01f, glm::vec3(0.1f, 0.1f, 0.8f), glm::vec3(1.0f, 1.0f, 1.0f)),
-			circle(0.0f, 0.0f, 0.03f, 0.01f, glm::vec3(0.1f, 0.1f, 0.8f), glm::vec3(1.0f, 1.0f, 1.0f))
+			circle(p2.x, p2.y, 0.03f, 0.01f, glm::vec3(0.1f, 0.1f, 0.8f), glm::vec3(1.0f, 1.0f, 1.0f)),
+			circle(t1.x, t1.y, 0.03f, 0.01f, glm::vec3(0.1f, 0.1f, 0.8f), glm::vec3(1.0f, 1.0f, 1.0f)),
+			circle(t2.x, t2.y, 0.03f, 0.01f, glm::vec3(0.1f, 0.1f, 0.8f), glm::vec3(1.0f, 1.0f, 1.0f))
 		}, std::vector<dashed_line>{
-			dashed_line(glm::vec3(x, y, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 0.0f, 0.0f), 50.0f, 50.0f),
-			dashed_line(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 0.0f, 0.0f), 50.0f, 50.0f)
+			dashed_line(glm::vec3(x, y, 0.0f), t1, glm::vec3(1.0f, 0.0f, 0.0f), 50.0f, 50.0f),
+			dashed_line(p2, t2, glm::vec3(1.0f, 0.0f, 0.0f), 50.0f, 50.0f)
 		} })
 	);
 	selected_coons = { &renderer_.coons_vector.back(), 0};
@@ -213,19 +221,22 @@ void window::put_coons(float x, float y)
  */
 void window::put_bezier(float x, float y)
 {
+	const glm::vec3 t1 = glm::vec3(generate_random(), generate_random(), 0.0f);
+	const glm::vec3 t2 = glm::vec3(generate_random(), generate_random(), 0.0f);
+	const glm::vec3 p2 = glm::vec3(generate_random(), generate_random(), 0.0f);
 	renderer_.bezier_vector.push_back(std::pair<bezier, guidelines>(
-		bezier(glm::vec3(x, y, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f), 20),
+		bezier(glm::vec3(x, y, 0.0f), p2, t1, t2, 20),
 		{ std::vector<circle> {
 			circle(x, y, 0.03f, 0.01f, glm::vec3(0.1f, 0.1f, 0.8f), glm::vec3(1.0f, 1.0f, 1.0f)),
-			circle(0.0f, 0.0f, 0.03f, 0.01f, glm::vec3(0.1f, 0.1f, 0.8f), glm::vec3(1.0f, 1.0f, 1.0f)),
-			circle(0.0f, 0.0f, 0.03f, 0.01f, glm::vec3(0.1f, 0.1f, 0.8f), glm::vec3(1.0f, 1.0f, 1.0f)),
-			circle(0.0f, 0.0f, 0.03f, 0.01f, glm::vec3(0.1f, 0.1f, 0.8f), glm::vec3(1.0f, 1.0f, 1.0f))
+			circle(p2.x, p2.y, 0.03f, 0.01f, glm::vec3(0.1f, 0.1f, 0.8f), glm::vec3(1.0f, 1.0f, 1.0f)),
+			circle(t1.x, t1.y, 0.03f, 0.01f, glm::vec3(0.1f, 0.1f, 0.8f), glm::vec3(1.0f, 1.0f, 1.0f)),
+			circle(t2.x, t2.y, 0.03f, 0.01f, glm::vec3(0.1f, 0.1f, 0.8f), glm::vec3(1.0f, 1.0f, 1.0f))
 		}, std::vector<dashed_line>{
-			dashed_line(glm::vec3(x, y, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 0.0f, 0.0f), 50.0f, 50.0f),
-			dashed_line(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 0.0f, 0.0f), 50.0f, 50.0f)
+			dashed_line(glm::vec3(x, y, 0.0f), t1, glm::vec3(1.0f, 0.0f, 0.0f), 50.0f, 50.0f),
+			dashed_line(p2, t2, glm::vec3(1.0f, 0.0f, 0.0f), 50.0f, 50.0f)
 		} })
 	);
-	selected_bezier = { &renderer_.bezier_vector.back(), 0};
+	selected_bezier = { &renderer_.bezier_vector.back(), 0 };
 }
 
 /**
