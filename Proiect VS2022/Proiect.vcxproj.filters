@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="GLUtils">
+      <UniqueIdentifier>{26efecbe-2d5a-427f-bdce-13578c9b8aba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\shaders">
+      <UniqueIdentifier>{3468b030-6dbe-424c-b95c-627592f96c8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\shaders\Curbe">
+      <UniqueIdentifier>{f360c407-86bf-4ecd-ace9-76a3100e1df1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\shaders\Text">
+      <UniqueIdentifier>{a753079d-04ac-44f4-90da-0a4886e7a0a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{42b4acf1-ec84-4bfe-a25f-491160bd94e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\shaders\Circle">
+      <UniqueIdentifier>{6e639e81-1fa1-491d-bb15-53e65149acfe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\shaders\DashedLine">
+      <UniqueIdentifier>{40340c3d-ac2b-4d26-8423-8220ec245bb8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>GLUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="bezier.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="coons.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="text.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="circle.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="dashed_line.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lambda.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VBO.h">
+      <Filter>GLUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="VAO.h">
+      <Filter>GLUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="EBO.h">
+      <Filter>GLUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>GLUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>GLUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>GLUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="drawable.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="coons.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="text.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="bezier.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="reference_counter.h">
+      <Filter>GLUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="circle.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="vertex-circle.vert">
+      <Filter>Resource Files\shaders\Circle</Filter>
+    </ClInclude>
+    <ClInclude Include="dashed_line.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vertex.vert">
+      <Filter>Resource Files\shaders\Curbe</Filter>
+    </None>
+    <None Include="fragment.vert">
+      <Filter>Resource Files\shaders\Curbe</Filter>
+    </None>
+    <None Include="vertex-text.vert">
+      <Filter>Resource Files\shaders\Text</Filter>
+    </None>
+    <None Include="fragment-text.vert">
+      <Filter>Resource Files\shaders\Text</Filter>
+    </None>
+    <None Include="fragment-circle.vert">
+      <Filter>Resource Files\shaders\Circle</Filter>
+    </None>
+    <None Include="fragment-line.vert">
+      <Filter>Resource Files\shaders\DashedLine</Filter>
+    </None>
+    <None Include="vertex-line.vert">
+      <Filter>Resource Files\shaders\DashedLine</Filter>
+    </None>
+  </ItemGroup>
+</Project>
