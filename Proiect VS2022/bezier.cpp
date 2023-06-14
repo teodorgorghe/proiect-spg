@@ -81,9 +81,9 @@ void bezier::update_points()
 		const float f2 = -3 * u3 + 3 * u2;
 		const float f3 = u3;
 
-		const float x = f0 * p1_[0] + f1 * p2_[0] + f2 * t1_[0] + f3 * t2_[0];
-		const float y = f0 * p1_[1] + f1 * p2_[1] + f2 * t1_[1] + f3 * t2_[1];
-		const float z = f0 * p1_[2] + f1 * p2_[2] + f2 * t1_[2] + f3 * t2_[2];
+		const float x = f0 * p1_[0] + f1 * t1_[0] + f2 * p2_[0] + f3 * t2_[0];
+		const float y = f0 * p1_[1] + f1 * t1_[1] + f2 * p2_[1] + f3 * t2_[1];
+		const float z = f0 * p1_[2] + f1 * t1_[2] + f2 * p2_[2] + f3 * t2_[2];
 
 		points_[i].position = glm::vec3(x, y, z);
 		points_[i].color = color_;
